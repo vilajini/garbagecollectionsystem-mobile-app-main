@@ -27,7 +27,7 @@ const AddFeedbackScreen = () => {
 
   const fetchTruckIds = async () => {
     try {
-      const response = await axios.get('http://192.168.31.214:5000/api/routes');
+      const response = await axios.get('http://192.168.100.10:5000/api/routes');
       setTruckIds(response.data.map(truck => truck.truckId));
     } catch (error) {
       console.error('Error fetching truck IDs:', error);
@@ -49,7 +49,7 @@ const AddFeedbackScreen = () => {
   
     setLoading(true);
     try {
-      const response = await axios.post('http://192.168.31.214:5000/api/feedback', {
+      const response = await axios.post('http://192.168.100.10:5000/api/feedback', {
         userId: user.userId,
         feedback,
         truckId: selectedTruckId,

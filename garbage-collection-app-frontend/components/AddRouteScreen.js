@@ -72,7 +72,7 @@ const AddRouteScreen = ({ navigation }) => {
             throw new Error('Truck ID must be six characters long and alphanumeric.');
           }
       
-          await axios.post('http://192.168.31.214:5000/api/routes', { 
+          await axios.post('http://192.168.100.10:5000/api/routes', { 
             truckId, 
             startDistrict,
             endDistrict,

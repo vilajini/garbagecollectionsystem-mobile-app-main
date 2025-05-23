@@ -17,7 +17,7 @@ const SignUpScreen = ({ navigation }) => {
 
     setLoading(true); // Start loading before the request
     try {
-      await axios.post('http://192.168.31.214:5000/api/auth/signup', { email, password, userType });
+      await axios.post('http://192.168.100.10:5000/api/auth/signup', { email, password, userType });
       setLoading(false); // End loading after the request is resolved
       Alert.alert('Success', 'Account created successfully', [
         { text: 'OK', onPress: () => navigation.navigate('SignIn') }

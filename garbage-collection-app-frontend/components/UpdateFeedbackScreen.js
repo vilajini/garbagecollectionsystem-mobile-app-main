@@ -25,7 +25,7 @@ const UpdateFeedbackScreen = ({ route, navigation }) => {
     const fetchFeedbackDetails = async () => {
       try {
         setLoading(true); // Start loading when fetching details
-        const response = await axios.get(`http://192.168.31.214:5000/api/feedback/getfeedback/${feedbackId}`);
+        const response = await axios.get(`http://192.168.100.10:5000/api/feedback/getfeedback/${feedbackId}`);
         const data = response.data;
         setFeedback(data.feedback || '');
         setRating(data.rating || 0);
@@ -47,7 +47,7 @@ const UpdateFeedbackScreen = ({ route, navigation }) => {
 
   const fetchTruckIds = async () => {
     try {
-      const response = await axios.get('http://192.168.31.214:5000/api/routes');
+      const response = await axios.get('http://192.168.100.10:5000/api/routes');
       setTruckIds(response.data.map(truck => truck.truckId));
     } catch (error) {
       console.error('Error fetching truck IDs:', error);
@@ -69,7 +69,7 @@ const UpdateFeedbackScreen = ({ route, navigation }) => {
   
     try {
       setLoading(true); // Start loading when attempting to update
-      const response = await axios.put(`http://192.168.31.214:5000/api/feedback/${feedbackId}`, {
+      const response = await axios.put(`http://192.168.100.10:5000/api/feedback/${feedbackId}`, {
         feedback,
         rating,
         truckId

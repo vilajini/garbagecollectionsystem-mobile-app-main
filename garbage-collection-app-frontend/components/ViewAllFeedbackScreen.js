@@ -11,7 +11,7 @@ const ViewAllFeedbackScreen = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://192.168.31.214:5000/api/feedback');
+        const response = await axios.get('http://192.168.100.10:5000/api/feedback');
         setFeedbacks(response.data);
       } catch (error) {
         console.log(error);
@@ -38,7 +38,7 @@ const ViewAllFeedbackScreen = () => {
           text: "Delete",
           onPress: async () => {
             try {
-              await axios.delete(`http://192.168.31.214:5000/api/feedback/${id}`);
+              await axios.delete(`http://192.168.100.10:5000/api/feedback/${id}`);
               alert("Feedback deleted successfully!");
             } catch (error) {
               alert("Failed to delete feedback");

@@ -56,7 +56,7 @@ const UpdateRouteScreen = ({ route, navigation }) => {
 
   const fetchRouteDetails = async () => {
     try {
-      const response = await axios.get(`http://192.168.31.214:5000/api/routes/${routeId}`);
+      const response = await axios.get(`http://192.168.100.10:5000/api/routes/${routeId}`);
       if (response.data) {
         setRouteName(response.data.name);  // Update this line based on actual data structure
         setTruckCode(response.data.truckId);  // Assuming truckId is also part of the route data
@@ -82,7 +82,7 @@ const UpdateRouteScreen = ({ route, navigation }) => {
       }
   
       // Continue with the update operation
-      await axios.put(`http://192.168.31.214:5000/api/routes/${routeId}`, {
+      await axios.put(`http://192.168.100.10:5000/api/routes/${routeId}`, {
         name: routeName,
         truckId: truckId,
         startDistrict: startDistrict,

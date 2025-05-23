@@ -14,7 +14,7 @@ const FeedbackScreen = () => {
     
     try {
       // Update this line with your actual IP and port
-      const response = await axios.post('http://192.168.31.214:5000/api/feedback', {
+      const response = await axios.post('http://192.168.100.10:5000/api/feedback', {
         userId,
         feedback
       });

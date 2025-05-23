@@ -17,7 +17,7 @@ const SignInScreen = ({ navigation }) => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://192.168.31.214:5000/api/auth/signin', { email, password });
+      const response = await axios.post('http://192.168.100.10:5000/api/auth/signin', { email, password });
       setLoading(false);
       const { data } = response;
       setUser(data);  // Store user data in context

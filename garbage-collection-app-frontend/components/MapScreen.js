@@ -12,7 +12,7 @@ const MapScreen = () => {
   useEffect(() => {
     const fetchRoutes = async () => {
       try {
-        const response = await axios.get('http://192.168.31.214:5000/api/routes');
+        const response = await axios.get('http://192.168.100.10:5000/api/routes');
         setRoutes(response.data);
       } catch (error) {
         console.error('Error fetching routes:', error);

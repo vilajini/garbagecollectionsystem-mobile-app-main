@@ -26,7 +26,7 @@ const FeedbackReportScreen = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const response = await axios.get('http://192.168.31.214:5000/api/feedback');
+      const response = await axios.get('http://192.168.100.10:5000/api/feedback');
       setFeedbacks(response.data);
     } catch (error) {
       console.error('Failed to fetch feedbacks:', error);
@@ -80,7 +80,7 @@ const FeedbackReportScreen = () => {
           text: "Delete",
           onPress: async () => {
             try {
-              await axios.delete(`http://192.168.31.214:5000/api/feedback/${id}`);
+              await axios.delete(`http://192.168.100.10:5000/api/feedback/${id}`);
               setFeedbacks(feedbacks.filter(feedback => feedback._id !== id));
             } catch (error) {
               Alert.alert('Error', 'Failed to delete feedback');

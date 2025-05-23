@@ -14,7 +14,7 @@ const ViewAllRoutesScreen = () => {
 
   const fetchRoutes = async () => {
     try {
-      const response = await axios.get('http://192.168.31.214:5000/api/routes');
+      const response = await axios.get('http://192.168.100.10:5000/api/routes');
       console.log("API Response:", response.data);
       setRoutes(response.data);
     } catch (error) {
@@ -36,7 +36,7 @@ const ViewAllRoutesScreen = () => {
           text: "Delete",
           onPress: async () => {
             try {
-              await axios.delete(`http://192.168.31.214:5000/api/routes/${id}`);
+              await axios.delete(`http://192.168.100.10:5000/api/routes/${id}`);
               fetchRoutes();
             } catch (error) {
               Alert.alert('Error', 'Failed to delete route');
